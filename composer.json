@@ -1,11 +1,15 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "rmirandasv/ltsx",
+    "name": "rmirandasv/atom-starter-kit",
     "type": "project",
-    "description": "A Laravel TSX Starter Kit with Inertia.js, Typescript, Ract and Shadcn.",
+    "description": "Laravel Starter Kit with Inertia.js, Typescript, Ract and Shadcn.",
     "keywords": [
         "laravel",
-        "framework"
+        "inertia",
+        "typescript",
+        "react",
+        "shadcn",
+        "starter-kit"
     ],
     "license": "MIT",
     "require": {
