@@ -4,7 +4,6 @@ namespace App\Policies;
 
 use App\Models\TeamInvitation;
 use App\Models\User;
-use Illuminate\Auth\Access\Response;
 
 class TeamInvitationPolicy
 {
@@ -48,7 +47,7 @@ class TeamInvitationPolicy
         return $teamInvitation->team->members()
             ->where('user_id', $user->id)
             ->first()
-            ?->role === "admin" || $teamInvitation->team->user_id === $user->id;
+            ?->role === 'admin' || $teamInvitation->team->user_id === $user->id;
     }
 
     /**

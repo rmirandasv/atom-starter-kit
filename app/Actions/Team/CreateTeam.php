@@ -11,9 +11,7 @@ class CreateTeam
     /**
      * Create a new team for the given user.
      *
-     * @param  \App\Models\User  $user
-     * @param  array  $data{ name: string }
-     * @return \App\Models\Team
+     * @param  array  $data{  name: string }
      */
     public function handle(User $user, array $data): Team
     {

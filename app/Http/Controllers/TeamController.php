@@ -19,7 +19,6 @@ use Inertia\Inertia;
 
 class TeamController extends Controller
 {
-
     public function index(Request $request)
     {
         Gate::authorize('viewAny', Team::class);
@@ -28,7 +27,7 @@ class TeamController extends Controller
             ->withCount('members')
             ->orderBy(column: 'personal_team', direction: 'desc')
             ->get();
-        
+
         return Inertia::render(
             component: 'settings/teams/index',
             props: compact('teams')
@@ -178,5 +177,4 @@ class TeamController extends Controller
                 ],
             ]);
     }
-
 }

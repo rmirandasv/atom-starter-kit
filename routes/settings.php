@@ -8,103 +8,103 @@ use Inertia\Inertia;
 Route::middleware(['auth'])->group(function () {
 
     Route::redirect(
-        '/settings', 
+        '/settings',
         '/settings/profile'
     )
-    ->name('settings');
+        ->name('settings');
 
     Route::get(
-        '/settings/profile', 
+        '/settings/profile',
         [SettingsController::class, 'profile']
     )
-    ->name('settings.profile');
+        ->name('settings.profile');
 
     Route::get(
-        '/settings/password', 
+        '/settings/password',
         [SettingsController::class, 'password']
     )
-    ->name('settings.password');
+        ->name('settings.password');
 
     Route::get(
-        '/settings/theme', 
+        '/settings/theme',
         [SettingsController::class, 'theme']
     )
-    ->name('settings.theme');
+        ->name('settings.theme');
 
     Route::get(
-        '/settings/teams', 
+        '/settings/teams',
         [TeamController::class, 'index']
     )
-    ->name('settings.teams');
+        ->name('settings.teams');
 
     Route::get(
-        '/settings/teams/{team}', 
+        '/settings/teams/{team}',
         [TeamController::class, 'show']
     )
-    ->name('settings.teams.show');
+        ->name('settings.teams.show');
 
     Route::get(
-        '/settings/teams/{team}/accept', 
+        '/settings/teams/{team}/accept',
         [TeamController::class, 'accept']
     )
-    ->name('settings.teams.accept')
-    ->middleware('signed');
+        ->name('settings.teams.accept')
+        ->middleware('signed');
 
     Route::post(
-        '/settings/teams/{team}/accept', 
+        '/settings/teams/{team}/accept',
         [TeamController::class, 'join']
     )
-    ->name('settings.teams.join')
-    ->middleware('signed');
+        ->name('settings.teams.join')
+        ->middleware('signed');
 
     Route::post(
-        '/settings/teams', 
+        '/settings/teams',
         [TeamController::class, 'store']
     )
-    ->name('settings.teams.store');
+        ->name('settings.teams.store');
 
     Route::post(
-        '/settings/teams/{team}/switch', 
+        '/settings/teams/{team}/switch',
         [TeamController::class, 'switch']
     )
-    ->name('settings.teams.switch');
+        ->name('settings.teams.switch');
 
     Route::post(
-        '/settings/teams/{team}/invite', 
+        '/settings/teams/{team}/invite',
         [TeamController::class, 'invite']
     )
-    ->name('settings.teams.invite');
+        ->name('settings.teams.invite');
 
     Route::put(
-        '/settings/teams/{team}', 
+        '/settings/teams/{team}',
         [TeamController::class, 'update']
     )
-    ->name('settings.teams.update');
+        ->name('settings.teams.update');
 
     Route::delete(
-        '/settings/teams/{team}/invite/{invite}', 
+        '/settings/teams/{team}/invite/{invite}',
         [TeamController::class, 'destroyInvite']
     )
-    ->name('settings.teams.invite.destroy');
+        ->name('settings.teams.invite.destroy');
 
     Route::delete(
-        '/settings/teams/{team}/leave', 
+        '/settings/teams/{team}/leave',
         [TeamController::class, 'leave']
     )
-    ->name('settings.teams.leave');
+        ->name('settings.teams.leave');
 
     Route::delete(
-        '/settings/teams/{team}/{user}', 
+        '/settings/teams/{team}/{user}',
         [TeamController::class, 'removeUser']
     )
-    ->name('settings.teams.remove');
+        ->name('settings.teams.remove');
 
     Route::delete(
-        '/settings/teams/{team}', 
+        '/settings/teams/{team}',
         [TeamController::class, 'destroy']
     )
-    ->name('settings.teams.destroy')
-    ->middleware('password.confirm');
+        ->name('settings.teams.destroy')
+        ->middleware('password.confirm');
 
     Route::get('/user/confirm-password', function () {
         return Inertia::render('auth/confirm-password');

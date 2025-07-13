@@ -18,7 +18,7 @@ class InviteTeamMember
         ]);
 
         $invitationUrl = URL::temporarySignedRoute(
-            name: 'settings.teams.accept', 
+            name: 'settings.teams.accept',
             expiration: now()->addDays(7),
             parameters: [
                 'team' => $team->id,

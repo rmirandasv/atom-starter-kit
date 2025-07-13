@@ -15,6 +15,7 @@ class SettingsController extends Controller
     public function password(Request $request)
     {
         $status = $request->session()->get('status', null);
+
         return Inertia::render('settings/password', [
             'status' => $status,
         ]);
@@ -24,5 +25,4 @@ class SettingsController extends Controller
     {
         return Inertia::render('settings/theme');
     }
-
 }

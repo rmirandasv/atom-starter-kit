@@ -40,7 +40,7 @@ class Team extends Model
 
     public function addMember(User $user, string $role = 'member'): void
     {
-        if (!$this->hasMember($user)) {
+        if (! $this->hasMember($user)) {
             $this->members()->attach($user, ['role' => $role]);
         }
     }

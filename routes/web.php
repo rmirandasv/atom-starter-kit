@@ -9,9 +9,9 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::middleware(['auth'])->group(function () {
 
     Route::get(
-        '/dashboard', 
+        '/dashboard',
         [DashboardController::class, 'index']
     )
-    ->name('dashboard');
+        ->name('dashboard');
 
 });
