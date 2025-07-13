@@ -12,7 +12,7 @@ createInertiaApp({
     createRoot(el).render(
       <ThemeProvider>
         <App {...props} />
-      </ThemeProvider>
+      </ThemeProvider>,
     );
   },
 });

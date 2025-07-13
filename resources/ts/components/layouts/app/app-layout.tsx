@@ -1,11 +1,11 @@
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
-import { ReactNode, useEffect } from "react";
-import { AppSidebar } from "./app-sidebar";
-import { Head, usePage } from "@inertiajs/react";
-import { AppBreadcrumbItem, SharedData } from "@/types";
-import AppBreadcrumb from "./app-breadcrumb";
 import { Toaster } from "@/components/ui/sonner";
+import { AppBreadcrumbItem, SharedData } from "@/types";
+import { Head, usePage } from "@inertiajs/react";
+import { ReactNode, useEffect } from "react";
 import { toast } from "sonner";
+import AppBreadcrumb from "./app-breadcrumb";
+import { AppSidebar } from "./app-sidebar";
 
 type AppLayoutProps = {
   title?: string;
@@ -13,11 +13,7 @@ type AppLayoutProps = {
   breadcrumbs?: AppBreadcrumbItem[];
 };
 
-export default function AppLayout({
-  title,
-  breadcrumbs,
-  children,
-}: AppLayoutProps) {
+export default function AppLayout({ title, breadcrumbs, children }: AppLayoutProps) {
   const { flash } = usePage<SharedData>().props;
 
   useEffect(() => {
@@ -29,16 +25,14 @@ export default function AppLayout({
   return (
     <SidebarProvider>
       <Head title={title} />
-      <div className="min-h-screen flex w-full bg-background antialiased">
+      <div className="flex min-h-screen w-full bg-background antialiased">
         <AppSidebar />
-        <div className="flex flex-col w-full">
-          <div className=" px-4 py-3 flex items-center space-x-3">
+        <div className="flex w-full flex-col">
+          <div className="flex items-center space-x-3 px-4 py-3">
             <SidebarTrigger />
-            {breadcrumbs && breadcrumbs.length > 0 && (
-              <AppBreadcrumb items={breadcrumbs} />
-            )}
+            {breadcrumbs && breadcrumbs.length > 0 && <AppBreadcrumb items={breadcrumbs} />}
           </div>
-          <main className="p-6 w-full mx-auto">{children}</main>
+          <main className="mx-auto w-full p-6">{children}</main>
         </div>
         <Toaster />
       </div>

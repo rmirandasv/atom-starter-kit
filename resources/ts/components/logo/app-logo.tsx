@@ -11,11 +11,7 @@ export default function AppLogo(props: SVGProps<SVGSVGElement>) {
       preserveAspectRatio="xMidYMid meet"
       {...props}
     >
-      <g
-        transform="translate(0.000000,329.000000) scale(0.100000,-0.100000)"
-        fill="currentColor"
-        stroke="none"
-      >
+      <g transform="translate(0.000000,329.000000) scale(0.100000,-0.100000)" fill="currentColor" stroke="none">
         <path
           d="M146 3232 c-3 -3 -6 -122 -6 -264 l0 -258 258 2 257 3 0 258 0 258
 -252 3 c-138 3 -254 2 -257 -2z"

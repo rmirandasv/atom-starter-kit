@@ -15,11 +15,7 @@ export default function ThemeSettings() {
         { label: "Theme", href: route("settings.theme") },
       ]}
     >
-      <Heading
-        size="small"
-        title="Theme Settings"
-        description="Customize the appearance of your application."
-      />
+      <Heading size="small" title="Theme Settings" description="Customize the appearance of your application." />
       <ToggleGroup
         type="single"
         value={theme}

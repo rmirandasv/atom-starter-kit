@@ -1,43 +1,28 @@
-import { z } from "zod";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Button } from "../ui/button";
 import useFormHandler from "@/hooks/use-form-handler";
 import route from "ziggy-js";
+import { z } from "zod";
+import { Button } from "../ui/button";
 
 const schema = z
   .object({
     name: z.string().min(1, { message: "Name is required" }),
     email: z.string().email({ message: "Invalid email address" }),
-    password: z
-      .string()
-      .min(6, { message: "Password must be at least 6 characters long" }),
-    password_confirmation: z
-      .string()
-      .min(6, { message: "Password confirmation is required" }),
+    password: z.string().min(6, { message: "Password must be at least 6 characters long" }),
+    password_confirmation: z.string().min(6, { message: "Password confirmation is required" }),
   })
   .refine((data) => data.password === data.password_confirmation, {
     message: "Passwords don't match",
   });
 
 export default function RegisterForm() {
-  const { form, loading, handleSubmit } = useFormHandler(
-    schema,
-    route("register"),
-    {
-      name: "",
-      email: "",
-      password: "",
-      password_confirmation: "",
-    }
-  );
+  const { form, loading, handleSubmit } = useFormHandler(schema, route("register"), {
+    name: "",
+    email: "",
+    password: "",
+    password_confirmation: "",
+  });
 
   return (
     <Form {...form}>
@@ -88,11 +73,7 @@ export default function RegisterForm() {
             <FormItem>
               <FormLabel>Password Confirmation</FormLabel>
               <FormControl>
-                <Input
-                  type="password"
-                  placeholder="Password Confirmation"
-                  {...field}
-                />
+                <Input type="password" placeholder="Password Confirmation" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>

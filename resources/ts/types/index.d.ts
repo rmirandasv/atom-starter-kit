@@ -49,9 +49,9 @@ export type Auth = {
 };
 
 export type SharedData = {
-    auth: Auth;
-    status: string | null;
-    flash: Flash | null;
+  auth: Auth;
+  status: string | null;
+  flash: Flash | null;
 };
 
 export type Flash = {

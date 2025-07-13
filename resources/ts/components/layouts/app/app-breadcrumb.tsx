@@ -1,11 +1,4 @@
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { AppBreadcrumbItem } from "@/types";
 import { Link } from "@inertiajs/react";
 import { Fragment } from "react/jsx-runtime";
@@ -23,9 +16,7 @@ export default function AppBreadcrumb({ items }: AppBreadcrumbProps) {
         {items.map((item, index) => (
           <Fragment key={item.label}>
             <BreadcrumbItem>
-              {items.length - 1 === index && (
-                <BreadcrumbPage>{item.label}</BreadcrumbPage>
-              )}
+              {items.length - 1 === index && <BreadcrumbPage>{item.label}</BreadcrumbPage>}
               {items.length - 1 !== index && (
                 <BreadcrumbLink asChild>
                   <Link href={item.href}>{item.label}</Link>

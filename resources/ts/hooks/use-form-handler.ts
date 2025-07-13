@@ -5,17 +5,12 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 type FormHandlerOptions = {
-    method?: "post" | "put" | "patch";
-    onSuccess?: () => void;
-    onError?: (errors: Record<string, string>) => void;
-}
+  method?: "post" | "put" | "patch";
+  onSuccess?: () => void;
+  onError?: (errors: Record<string, string>) => void;
+};
 
-export default function useFormHandler<T extends z.ZodSchema<any>>(
-  schema: T,
-  url: string,
-  defaultValues?: z.infer<T>,
-  options?: FormHandlerOptions
-) {
+export default function useFormHandler<T extends z.ZodSchema<any>>(schema: T, url: string, defaultValues?: z.infer<T>, options?: FormHandlerOptions) {
   type FormValues = z.infer<T>;
 
   const form = useForm<FormValues>({
@@ -42,7 +37,7 @@ export default function useFormHandler<T extends z.ZodSchema<any>>(
         },
       });
     },
-    [url, form]
+    [url, form],
   );
 
   return {

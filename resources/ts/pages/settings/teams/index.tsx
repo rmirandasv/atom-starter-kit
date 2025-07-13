@@ -23,10 +23,7 @@ export default function TeamsPage({ teams }: { teams: Team[] }) {
       </div>
       <ul className="flex flex-col gap-4">
         {teams.map((team) => (
-          <li
-            className="flex flex-col p-4 border rounded-md border-border"
-            key={team.id}
-          >
+          <li className="flex flex-col rounded-md border border-border p-4" key={team.id}>
             <div className="flex flex-row items-center justify-between">
               <div className="flex flex-col">
                 <div className="flex items-center gap-4">
@@ -37,13 +34,9 @@ export default function TeamsPage({ teams }: { teams: Team[] }) {
                   </Badge>
                 </div>
                 {team.personal_team == true && team.user_id === auth.user.id ? (
-                  <span className="text-sm text-muted-foreground">
-                    Personal Team
-                  </span>
+                  <span className="text-sm text-muted-foreground">Personal Team</span>
                 ) : (
-                  <span className="text-sm text-muted-foreground">
-                    {team.pivot?.role}
-                  </span>
+                  <span className="text-sm text-muted-foreground">{team.pivot?.role}</span>
                 )}
               </div>
               <Button variant="link" asChild>

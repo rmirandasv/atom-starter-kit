@@ -1,25 +1,16 @@
-import { z } from "zod";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import route from "ziggy-js";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
 import useFormHandler from "@/hooks/use-form-handler";
+import route from "ziggy-js";
+import { z } from "zod";
 
 const schema = z
   .object({
     current_password: z.string().min(8, {
       message: "Current password must be at least 8 characters long",
     }),
-    password: z
-      .string()
-      .min(8, { message: "New password must be at least 8 characters long" }),
+    password: z.string().min(8, { message: "New password must be at least 8 characters long" }),
     password_confirmation: z.string().min(8, {
       message: "Password confirmation must be at least 8 characters long",
     }),
@@ -41,7 +32,7 @@ export default function ChangePasswordForm() {
     },
     {
       method: "put",
-    }
+    },
   );
 
   return (
@@ -54,11 +45,7 @@ export default function ChangePasswordForm() {
             <FormItem>
               <FormLabel>Current Password</FormLabel>
               <FormControl>
-                <Input
-                  type="password"
-                  placeholder="Current Password"
-                  {...field}
-                />
+                <Input type="password" placeholder="Current Password" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -84,11 +71,7 @@ export default function ChangePasswordForm() {
             <FormItem>
               <FormLabel>Confirm New Password</FormLabel>
               <FormControl>
-                <Input
-                  type="password"
-                  placeholder="Confirm New Password"
-                  {...field}
-                />
+                <Input type="password" placeholder="Confirm New Password" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>

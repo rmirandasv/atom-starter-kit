@@ -5,8 +5,8 @@ import route from "ziggy-js";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background antialiased flex flex-col">
-      <div className="px-4 py-3 flex items-center justify-end space-x-3 bg-background">
+    <div className="flex min-h-screen flex-col bg-background antialiased">
+      <div className="flex items-center justify-end space-x-3 bg-background px-4 py-3">
         <Button asChild>
           <Link href={route("login")}>Login</Link>
         </Button>
@@ -14,14 +14,10 @@ export default function Home() {
           <Link href={route("register")}>Register</Link>
         </Button>
       </div>
-      <div className="max-w-7xl w-full mx-auto py-6 px-4 flex flex-col">
-        <Heading
-          size="large"
-          title="Welcome to your new app!"
-          description="This is a simple starter template for your new app."
-        />
+      <div className="mx-auto flex w-full max-w-7xl flex-col px-4 py-6">
+        <Heading size="large" title="Welcome to your new app!" description="This is a simple starter template for your new app." />
         <Heading title="Technologies used" />
-        <ul className="list-disc list-inside text-muted-foreground mb-8">
+        <ul className="mb-8 list-inside list-disc text-muted-foreground">
           <li>Laravel</li>
           <li>Inertia.js</li>
           <li>Typescript</li>
@@ -30,7 +26,7 @@ export default function Home() {
           <li>Shadcn</li>
         </ul>
         <Heading title="Features" />
-        <ul className="list-disc list-inside text-muted-foreground">
+        <ul className="list-inside list-disc text-muted-foreground">
           <li>Authentication</li>
           <li>Two factor authentication</li>
           <li>Registration</li>

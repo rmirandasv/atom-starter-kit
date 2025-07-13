@@ -1,27 +1,14 @@
-import { User } from "@/types";
-import { z } from "zod";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import route from "ziggy-js";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
 import useFormHandler from "@/hooks/use-form-handler";
+import { User } from "@/types";
+import route from "ziggy-js";
+import { z } from "zod";
 
 const schema = z.object({
-  name: z
-    .string()
-    .min(1, { message: "Name is required" })
-    .max(50, { message: "Name must be less than 50 characters" }),
-  email: z
-    .string()
-    .email({ message: "Invalid email address" })
-    .max(100, { message: "Email must be less than 100 characters" }),
+  name: z.string().min(1, { message: "Name is required" }).max(50, { message: "Name must be less than 50 characters" }),
+  email: z.string().email({ message: "Invalid email address" }).max(100, { message: "Email must be less than 100 characters" }),
 });
 
 export default function UserProfileForm({ user }: { user: User }) {

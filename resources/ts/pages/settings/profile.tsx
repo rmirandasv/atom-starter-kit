@@ -16,11 +16,7 @@ export default function Profile() {
         { label: "Profile", href: route("settings.profile") },
       ]}
     >
-      <Heading
-        title="Profile"
-        description="Manage your profile settings"
-        size="small"
-      />
+      <Heading title="Profile" description="Manage your profile settings" size="small" />
       <UserProfileForm user={auth.user} />
     </SettingsLayout>
   );

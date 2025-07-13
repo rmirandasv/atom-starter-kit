@@ -1,9 +1,9 @@
-import { ReactNode } from "react";
-import SettingsMenu from "./settings-menu";
 import AppLayout from "@/components/layouts/app/app-layout";
-import { AppBreadcrumbItem } from "@/types";
 import Heading from "@/components/ui/heading";
 import { Separator } from "@/components/ui/separator";
+import { AppBreadcrumbItem } from "@/types";
+import { ReactNode } from "react";
+import SettingsMenu from "./settings-menu";
 
 export default function SettingsLayout({
   children,
@@ -22,7 +22,7 @@ export default function SettingsLayout({
           <SettingsMenu />
         </div>
         <Separator orientation="horizontal" className="md:hidden" />
-        <div className="flex-1 max-w-2xl">{children}</div>
+        <div className="max-w-2xl flex-1">{children}</div>
       </div>
     </AppLayout>
   );

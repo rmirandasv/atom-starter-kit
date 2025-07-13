@@ -1,25 +1,16 @@
-import Heading from "@/components/ui/heading";
-import { z } from "zod";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import route from "ziggy-js";
 import { Button } from "@/components/ui/button";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import Heading from "@/components/ui/heading";
+import { Input } from "@/components/ui/input";
 import useFormHandler from "@/hooks/use-form-handler";
+import route from "ziggy-js";
+import { z } from "zod";
 
 const schema = z
   .object({
     email: z.string().email(),
     token: z.string(),
-    password: z
-      .string()
-      .min(8, { message: "Password must be at least 8 characters long" }),
+    password: z.string().min(8, { message: "Password must be at least 8 characters long" }),
     password_confirmation: z.string().min(8, {
       message: "Password confirmation must be at least 8 characters long",
     }),
@@ -29,8 +20,7 @@ const schema = z
   });
 
 export default function ResetPassword() {
-  const { email, token } =
-    (route().params as { email: string; token: string }) || {};
+  const { email, token } = (route().params as { email: string; token: string }) || {};
   const { form, loading, handleSubmit } = useFormHandler(
     schema,
     route("password.update", {
@@ -38,18 +28,15 @@ export default function ResetPassword() {
       token,
       password: "",
       password_confirmation: "",
-    })
+    }),
   );
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-background">
-      <div className="p-8 lg:px-0 max-w-sm w-full flex flex-col">
+    <div className="flex min-h-screen flex-col items-center justify-center bg-background">
+      <div className="flex w-full max-w-sm flex-col p-8 lg:px-0">
         <Heading title="Reset Password" description="Enter your new password" />
         <Form {...form}>
-          <form
-            onSubmit={form.handleSubmit(handleSubmit)}
-            className="space-y-4"
-          >
+          <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-4">
             <FormItem>
               <FormLabel>Email</FormLabel>
               <FormControl>
@@ -63,11 +50,7 @@ export default function ResetPassword() {
                 <FormItem>
                   <FormLabel>Password</FormLabel>
                   <FormControl>
-                    <Input
-                      type="password"
-                      placeholder="Enter new password"
-                      {...field}
-                    />
+                    <Input type="password" placeholder="Enter new password" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -80,11 +63,7 @@ export default function ResetPassword() {
                 <FormItem>
                   <FormLabel>Password Confirmation</FormLabel>
                   <FormControl>
-                    <Input
-                      type="password"
-                      placeholder="Confirm new password"
-                      {...field}
-                    />
+                    <Input type="password" placeholder="Confirm new password" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

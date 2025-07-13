@@ -1,4 +1,4 @@
-import { Calendar, Home, Inbox, Search, Settings } from "lucide-react";
+import { Home } from "lucide-react";
 
 import {
   Sidebar,
@@ -12,9 +12,9 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
-import AccountDropdown from "./account-dropdown";
-import route from "ziggy-js";
 import { Link } from "@inertiajs/react";
+import route from "ziggy-js";
+import AccountDropdown from "./account-dropdown";
 import TeamsDropdown from "./teams-dropdown";
 
 const items = [

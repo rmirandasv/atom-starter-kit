@@ -1,34 +1,14 @@
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import { useState } from "react";
-import { z } from "zod";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
-import route from "ziggy-js";
-import { Team } from "@/types";
-import { toast } from "sonner";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import useFormHandler from "@/hooks/use-form-handler";
+import { Team } from "@/types";
+import { useState } from "react";
+import { toast } from "sonner";
+import route from "ziggy-js";
+import { z } from "zod";
 
 const schema = z.object({
   email: z.string().email(),
@@ -50,27 +30,19 @@ export default function InviteTeamMemberDialog({ team }: { team: Team }) {
         setOpen(false);
         toast("Team member invited successfully");
       },
-    }
+    },
   );
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogTrigger className="text-sm text-muted-foreground underline font-semibold">
-        Invite
-      </DialogTrigger>
+      <DialogTrigger className="text-sm font-semibold text-muted-foreground underline">Invite</DialogTrigger>
       <DialogContent>
         <DialogHeader>
           <DialogTitle>Invite a team member</DialogTitle>
-          <DialogDescription>
-            Invite a team member to join your team. You can invite them by
-            entering their email address.
-          </DialogDescription>
+          <DialogDescription>Invite a team member to join your team. You can invite them by entering their email address.</DialogDescription>
         </DialogHeader>
         <Form {...form}>
-          <form
-            onSubmit={form.handleSubmit(handleSubmit)}
-            className="grid grid-cols-1 gap-4 lg:grid-cols-2"
-          >
+          <form onSubmit={form.handleSubmit(handleSubmit)} className="grid grid-cols-1 gap-4 lg:grid-cols-2">
             <FormField
               control={form.control}
               name="email"
@@ -78,11 +50,7 @@ export default function InviteTeamMemberDialog({ team }: { team: Team }) {
                 <FormItem>
                   <FormLabel>Email</FormLabel>
                   <FormControl>
-                    <Input
-                      placeholder="Enter email address"
-                      {...field}
-                      disabled={loading}
-                    />
+                    <Input placeholder="Enter email address" {...field} disabled={loading} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -94,11 +62,7 @@ export default function InviteTeamMemberDialog({ team }: { team: Team }) {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Role</FormLabel>
-                  <Select
-                    defaultValue={field.value}
-                    onValueChange={field.onChange}
-                    disabled={loading}
-                  >
+                  <Select defaultValue={field.value} onValueChange={field.onChange} disabled={loading}>
                     <FormControl>
                       <SelectTrigger className="w-full">
                         <SelectValue placeholder="Select role" />
