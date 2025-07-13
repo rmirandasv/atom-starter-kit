@@ -2,7 +2,7 @@ import type { Route as routeFn } from "ziggy-js";
 
 declare global {
   const route: routeFn;
-  
+
   // Vite-specific type declarations
   interface ImportMetaEnv {
     readonly VITE_APP_NAME?: string;
