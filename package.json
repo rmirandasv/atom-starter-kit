@@ -4,7 +4,12 @@
   "scripts": {
     "build": "vite build",
     "dev": "vite",
-    "prepare": "husky"
+    "prepare": "husky",
+    "build:ssr": "vite build && vite build --ssr",
+    "format": "prettier --write resources/",
+    "format:check": "prettier --check resources/",
+    "lint": "eslint . --fix",
+    "types": "tsc --noEmit"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
