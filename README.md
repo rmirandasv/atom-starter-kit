@@ -1,6 +1,6 @@
-# LTSX – Laravel + TSX Starter Kit
+# Atmo Starter Kit
 
-**LTSX** is a modern starter kit that combines the power of **Laravel 12**, **Inertia.js**, **React**, **TypeScript**, **Tailwind CSS**, and **Shadcn UI** to help you kickstart your next project with best practices and essential features out of the box.
+**Atom Starter Kit** is a modern starter kit that combines the power of **Laravel 12**, **Inertia.js**, **React**, **TypeScript**, **Tailwind CSS**, and **Shadcn UI** to help you kickstart your next project with best practices and essential features out of the box.
 
 ## ⚡️ Key Features
 
@@ -34,6 +34,6 @@
 - **Tailwind CSS** – Utility-first CSS framework  
 - **Shadcn UI** – Accessible and composable UI components  
 
-## 🚀 Why LTSX?
+## 🚀 Why Atem starter kit?
 
-LTSX is built for speed and productivity. Whether you're building a SaaS, dashboard, internal tool, or any Laravel-based app with React, this template provides a rock-solid foundation so you can focus on your business logic instead of boilerplate.
+Atom starter kit is built for speed and productivity. Whether you're building a SaaS, dashboard, internal tool, or any Laravel-based app with React, this template provides a rock-solid foundation so you can focus on your business logic instead of boilerplate.
