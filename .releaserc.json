@@ -46,5 +46,5 @@
   "parserOpts": {
     "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES"]
   },
-  "initialVersion": "0.0.1"
+  "initialVersion": "1.0.0"
 }
