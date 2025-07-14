@@ -11,7 +11,6 @@ export default function Profile() {
     <SettingsLayout
       title="Profile"
       breadcrumbs={[
-        { label: "Home", href: route("dashboard") },
         { label: "Settings", href: route("settings") },
         { label: "Profile", href: route("settings.profile") },
       ]}

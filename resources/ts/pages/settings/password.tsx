@@ -10,7 +10,6 @@ export default function Password({ status }: { status?: "two-factor-authenticati
     <SettingsLayout
       title="Account password"
       breadcrumbs={[
-        { label: "Home", href: route("dashboard") },
         { label: "Settings", href: route("settings") },
         { label: "Password", href: route("settings.password") },
       ]}
