@@ -14,6 +14,7 @@ const schema = z
   })
   .refine((data) => data.password === data.password_confirmation, {
     message: "Passwords don't match",
+    path: ["password_confirmation"],
   });
 
 export default function RegisterForm() {
