@@ -20,7 +20,7 @@ import TeamsDropdown from "./teams-dropdown";
 const items = [
   {
     title: "Home",
-    url: route("dashboard"),
+    routeName: "dashboard",
     icon: Home,
   },
 ];
@@ -38,8 +38,8 @@ export function AppSidebar() {
             <SidebarMenu>
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
-                    <Link href={item.url}>
+                  <SidebarMenuButton asChild isActive={route().current(item.routeName)}>
+                    <Link href={route(item.routeName)}>
                       <item.icon />
                       <span>{item.title}</span>
                     </Link>
