@@ -10,7 +10,7 @@ import {
 import useInitials from "@/hooks/use-initials";
 import { type SharedData } from "@/types";
 import { Link, usePage } from "@inertiajs/react";
-import { ChevronsUpDown, Users } from "lucide-react";
+import { Check, ChevronsUpDown, Users } from "lucide-react";
 import route from "ziggy-js";
 
 export default function TeamsDropdown() {
@@ -31,8 +31,9 @@ export default function TeamsDropdown() {
         <DropdownMenuLabel>Teams</DropdownMenuLabel>
         {auth.user.teams.map((team) => (
           <DropdownMenuItem key={team.id} className="cursor-pointer" asChild>
-            <Link method="post" href={route("settings.teams.switch", team.id)} className="w-full">
+            <Link method="post" href={route("settings.teams.switch", team.id)} className="w-full flex items-center space-x-2">
               <span>{team.name}</span>
+              {team.id === auth.user.currentTeam.id && <Check className="size-4" />}
             </Link>
           </DropdownMenuItem>
         ))}
