@@ -12,7 +12,7 @@ import { z } from "zod";
 
 const schema = z.object({
   email: z.string().email(),
-  role: z.string().default("user"),
+  role: z.string(),
 });
 
 export default function InviteTeamMemberDialog({ team }: { team: Team }) {

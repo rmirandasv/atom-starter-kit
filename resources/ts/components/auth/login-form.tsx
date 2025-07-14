@@ -10,7 +10,7 @@ import { z } from "zod";
 const schema = z.object({
   email: z.string().email("Invalid email address").min(1, "Email is required").max(255, "Email must be less than 255 characters"),
   password: z.string().min(1, "Password is required").max(255, "Password must be less than 255 characters"),
-  remember: z.boolean().optional(),
+  remember: z.boolean(),
 });
 export default function LoginForm() {
   const { form, loading, handleSubmit } = useFormHandler(schema, route("login"), {

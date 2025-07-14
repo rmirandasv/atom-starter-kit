@@ -17,6 +17,7 @@ const schema = z
   })
   .refine((data) => data.password === data.password_confirmation, {
     message: "Passwords must match",
+    path: ["password_confirmation"],
   });
 
 export type ChangePasswordFormValues = z.infer<typeof schema>;
