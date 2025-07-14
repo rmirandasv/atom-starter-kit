@@ -1,7 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { router } from "@inertiajs/react";
 import { useCallback, useState } from "react";
-import { useForm } from "react-hook-form";
+import { DefaultValues, FieldPath, FieldValues, useForm } from "react-hook-form";
 import { z } from "zod";
 
 type FormHandlerOptions = {
@@ -10,26 +10,33 @@ type FormHandlerOptions = {
   onError?: (errors: Record<string, string>) => void;
 };
 
-export default function useFormHandler<T extends z.ZodSchema<any>>(schema: T, url: string, defaultValues?: z.infer<T>, options?: FormHandlerOptions) {
-  type FormValues = z.infer<T>;
+type ZodObjectSchema<T> = z.ZodSchema<T> & {
+  shape?: Record<string, z.ZodTypeAny>;
+};
 
-  const form = useForm<FormValues>({
+export default function useFormHandler<TSchema extends ZodObjectSchema<TFormValues>, TFormValues extends FieldValues = z.infer<TSchema>>(
+  schema: TSchema,
+  url: string,
+  defaultValues?: DefaultValues<TFormValues>,
+  options?: FormHandlerOptions,
+) {
+  const form = useForm<TFormValues>({
     resolver: zodResolver(schema),
-    defaultValues: defaultValues || schema.parse({}),
+    defaultValues: defaultValues || (schema.parse({}) as DefaultValues<TFormValues>),
   });
 
   const [loading, setLoading] = useState<boolean>(false);
 
   const handleSubmit = useCallback(
-    (values: FormValues) => {
+    (values: TFormValues) => {
       router[options?.method || "post"](url, values, {
         onStart: () => setLoading(true),
         onFinish: () => setLoading(false),
-        onError: (errors) => {
+        onError: (errors: Record<string, string>) => {
           Object.keys(errors)
-            .filter((key) => key in form.getValues())
+            .filter((key): key is string => key in form.getValues())
             .forEach((key) => {
-              form.setError(key as any, {
+              form.setError(key as FieldPath<TFormValues>, {
                 type: "manual",
                 message: errors[key],
               });
@@ -37,7 +44,7 @@ export default function useFormHandler<T extends z.ZodSchema<any>>(schema: T, ur
         },
       });
     },
-    [url, form],
+    [url, form, options?.method],
   );
 
   return {

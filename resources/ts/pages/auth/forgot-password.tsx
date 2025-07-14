@@ -28,7 +28,7 @@ export default function ForgotPassword() {
         duration: 10000,
       });
     }
-  }, [status]);
+  }, [status, form]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background">
