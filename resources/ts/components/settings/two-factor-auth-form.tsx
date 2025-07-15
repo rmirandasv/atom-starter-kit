@@ -54,16 +54,11 @@ export default function TwoFactorAuthForm({ status }: { status?: "two-factor-aut
       {
         onStart: () => setLoading(true),
         onFinish: () => setLoading(false),
-        onError: (error) => {
-          console.error("Error confirming two-factor authentication:", error);
+        onError: () => {
           form.setError("code", {
             type: "manual",
             message: "Invalid code. Please try again.",
           });
-        },
-        onSuccess: () => {
-          form.reset();
-          router.reload();
         },
       },
     );

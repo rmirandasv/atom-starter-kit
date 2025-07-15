@@ -7,15 +7,16 @@ import route from "ziggy-js";
 import { z } from "zod";
 
 const schema = z.object({
-  password: z.string().nonempty("Password is required"),
+  password: z.string(),
 });
 
 export default function ConfirmPassword() {
   const { form, loading, handleSubmit } = useFormHandler(
     schema,
-    route("password.confirm.store", {
+    route("password.confirm.store"),
+    {
       password: "",
-    }),
+    }
   );
 
   return (

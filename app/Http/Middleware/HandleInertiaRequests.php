@@ -39,7 +39,15 @@ class HandleInertiaRequests extends Middleware
             'auth' => [
                 'user' => $request->user()
                     ?->load('teams', 'currentTeam')
-                    ?->only('id', 'name', 'email', 'teams', 'current_team_id', 'currentTeam'),
+                    ?->only([
+                        'id', 
+                        'name', 
+                        'email', 
+                        'teams', 
+                        'current_team_id', 
+                        'currentTeam',
+                        'two_factor_confirmed_at',
+                    ]),
             ],
             'status' => $request->session()->get('status', null),
             'flash' => [
