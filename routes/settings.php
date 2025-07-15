@@ -105,8 +105,4 @@ Route::middleware(['auth'])->group(function () {
     )
         ->name('settings.teams.destroy')
         ->middleware('password.confirm');
-
-    Route::get('/user/confirm-password', function () {
-        return Inertia::render('auth/confirm-password');
-    })->name('password.confirm');
 });
