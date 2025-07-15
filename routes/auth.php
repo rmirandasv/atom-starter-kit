@@ -11,7 +11,7 @@ Route::get('/reset-password', fn () => Inertia::render('auth/reset-password'))->
 
 Route::middleware(['auth'])->group(function () {
     Route::get(
-        '/user/confirm-password',
+        '/confirm-password',
         fn () => Inertia::render('auth/confirm-password')
     )->name('password.confirm');
 });
