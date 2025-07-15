@@ -11,13 +11,9 @@ const schema = z.object({
 });
 
 export default function ConfirmPassword() {
-  const { form, loading, handleSubmit } = useFormHandler(
-    schema,
-    route("password.confirm.store"),
-    {
-      password: "",
-    }
-  );
+  const { form, loading, handleSubmit } = useFormHandler(schema, route("password.confirm.store"), {
+    password: "",
+  });
 
   return (
     <div className="flex min-h-screen flex-col justify-center space-y-6">
