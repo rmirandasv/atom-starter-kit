@@ -12,10 +12,10 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
-import { Link } from "@inertiajs/react";
+import { SharedData } from "@/types";
+import { Link, usePage } from "@inertiajs/react";
 import route from "ziggy-js";
 import AccountDropdown from "./account-dropdown";
-import TeamsDropdown from "./teams-dropdown";
 
 const items = [
   {
@@ -26,10 +26,11 @@ const items = [
 ];
 
 export function AppSidebar() {
+  const { appName } = usePage<SharedData>().props;
   return (
     <Sidebar>
       <SidebarHeader>
-        <TeamsDropdown />
+        <h1 className="text-2xl font-bold">{appName}</h1>
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>

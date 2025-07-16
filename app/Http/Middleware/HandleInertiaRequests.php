@@ -36,16 +36,13 @@ class HandleInertiaRequests extends Middleware
     public function share(Request $request): array
     {
         return array_merge(parent::share($request), [
+            'appName' => config('app.name'),
             'auth' => [
                 'user' => $request->user()
-                    ?->load('teams', 'currentTeam')
                     ?->only([
                         'id',
                         'name',
                         'email',
-                        'teams',
-                        'current_team_id',
-                        'currentTeam',
                         'two_factor_confirmed_at',
                     ]),
             ],

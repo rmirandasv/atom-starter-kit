@@ -16,11 +16,6 @@ export default function SettingsMenu() {
             Password
           </Link>
         </VerticalMenuListItem>
-        <VerticalMenuListItem active={route().current("settings.teams*")}>
-          <Link href={route("settings.teams")} prefetch>
-            Teams
-          </Link>
-        </VerticalMenuListItem>
         <VerticalMenuListItem active={route().current("settings.theme")}>
           <Link href={route("settings.theme")} prefetch>
             Theme
