@@ -1,3 +1,19 @@
+# [1.2.0](https://github.com/rmirandasv/atom-starter-kit/compare/v1.1.0...v1.2.0) (2025-07-16)
+
+
+### Bug Fixes
+
+* add validation path for password confirmation in registration schema ([a9287e5](https://github.com/rmirandasv/atom-starter-kit/commit/a9287e5736c850fc790c89cb928b231f2a1c57c0))
+* enforce required role in invite team member schema and update remember field in login form ([d972cd5](https://github.com/rmirandasv/atom-starter-kit/commit/d972cd5b6067df63146e4f1d8f8d1b1af9690bde))
+* include two-factor authentication confirmation timestamp and streamline error handling in forms ([3992c17](https://github.com/rmirandasv/atom-starter-kit/commit/3992c17ad3e7fa08d0877641c97692fe95089fa7))
+* remove redundant password confirmation route from settings ([cf05c1d](https://github.com/rmirandasv/atom-starter-kit/commit/cf05c1d91497404f428f9c39ca60d1d46a3c0dda))
+* update password confirmation route for improved clarity ([13e12fd](https://github.com/rmirandasv/atom-starter-kit/commit/13e12fd4e577139c7c1adc6979d7e2d73a92dc30))
+
+
+### Features
+
+* enhance two-factor authentication UI ([4f5b64e](https://github.com/rmirandasv/atom-starter-kit/commit/4f5b64e996bf2ab49e8f13f4b1c2beb4b7cf6285))
+
 # [1.1.0](https://github.com/rmirandasv/atom-starter-kit/compare/v1.0.0...v1.1.0) (2025-07-14)
 
 
