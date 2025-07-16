@@ -2,6 +2,8 @@
 
 **Atom Starter Kit** is a modern, highly customizable starter kit that combines the power of **Laravel 12**, **Inertia.js**, **React**, **TypeScript**, **Tailwind CSS 4**, and **Shadcn UI** to help you kickstart your next project with best practices and essential features out of the box.
 
+<img width="1920" height="825" alt="image" src="https://github.com/user-attachments/assets/70dd8161-43c1-4588-a8a9-505d6300e632" />
+
 ## ⚡️ Key Features
 
 ### 🔐 Authentication & Security
