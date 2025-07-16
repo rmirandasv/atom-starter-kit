@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/rmirandasv/atom-starter-kit/compare/v1.2.0...v1.3.0) (2025-07-16)
+
+
+### Features
+
+* wrap app component with ThemeProvider for improved theming support ([4137cb5](https://github.com/rmirandasv/atom-starter-kit/commit/4137cb564c376674d7fe952f1f4d7e01ea7566dc))
+
 # [1.2.0](https://github.com/rmirandasv/atom-starter-kit/compare/v1.1.0...v1.2.0) (2025-07-16)
 
 
