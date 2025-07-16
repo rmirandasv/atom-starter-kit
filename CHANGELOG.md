@@ -1,3 +1,5 @@
+## [1.3.2](https://github.com/rmirandasv/atom-starter-kit/compare/v1.3.1...v1.3.2) (2025-07-16)
+
 ## [1.3.1](https://github.com/rmirandasv/atom-starter-kit/compare/v1.3.0...v1.3.1) (2025-07-16)
 
 # [1.3.0](https://github.com/rmirandasv/atom-starter-kit/compare/v1.2.0...v1.3.0) (2025-07-16)
